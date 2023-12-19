@@ -31,13 +31,14 @@
                              </div>
 			      		</div>
 			      	</div>
-                        <x-auth-session-status class="mb-4" :status="session('status')" />
+                        <x-auth-session-status class="mb-4 text-success" :status="session('status')" />
                         <form method="POST" action="{{ route('password.email') }}">
                         @csrf
 
                         <div class="form-group mt-3">
 			      			<input class="form-control" id="email"  type="email" name="email" :value="old('email')" required autocomplete="username">
 			      			<label class="form-control-placeholder" for="email">Email</label>
+							<x-input-error :messages="$errors->get('email')" class=" text-danger" />
 			      		</div>
                         
 		            <div class="form-group">
