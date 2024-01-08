@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +34,19 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-route::get('admin/user/index', function(){
-    return view('backend.user.index');
-});
+//menu user
+route::get('admin/user/index',[UserController::class,'index'])->name('u.index');
+
+//menu category
+route::get('admin/category/index',[CategoryController::class,'index'])->name('c.index');
+route::get('admin/category/createfrom',[CategoryController::class,'createfrom'])->name('c.from');
+route::get('admin/category/edit',[CategoryController::class,'edit'])->name('c.edit');
+
+
+
+
+//menu Product
+route::get('admin/product/index',[ProductController::class,'index'])->name('p.index');
+route::get('admin/product/createfrom',[ProductController::class,'createfrom'])->name('p.from');
+
+

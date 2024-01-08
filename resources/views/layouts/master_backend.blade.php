@@ -80,21 +80,21 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="{{ url('admin/user/index') }}" class="menu-link">
+                        <a href="{{ route('u.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-user-circle"></i>
                             <div data-i18n="Analytics">User</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="category.html" class="menu-link">
+                        <a href="{{ route('c.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-grid-alt"></i>
                             <div data-i18n="Analytics">Category</div>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="product.html" class="menu-link">
+                        <a href="{{ route('p.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-cart-alt"></i>
                             <div data-i18n="Analytics">Product</div>
                         </a>
